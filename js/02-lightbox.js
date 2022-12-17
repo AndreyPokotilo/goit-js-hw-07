@@ -5,12 +5,13 @@ const creatItemsEl = (galleryItems) =>
   galleryItems
     .map(
       ({ preview, original, description }) =>
-        `<a class="gallery__item" href='${original}'>
-         <img class="gallery__image"
-           src='${preview}'
-           alt='${description}' 
-         />
-       </a>`
+      `<div><a class="gallery__item" href="${original}">
+      <img class ="gallery__image"
+           src = "${preview}"    
+           alt = "${description}" 
+           "/>
+           </a>
+     </div>`
     )
     .join("");
 
@@ -20,5 +21,5 @@ galleryRef.insertAdjacentHTML("beforeend", creatItemsEl(galleryItems));
 new SimpleLightbox("ul.gallery a", {
   overlayOpacity: 0.9,
   captionsData: "alt",
-  captionDelay: 250,
+  captionDelay: 250
 });
